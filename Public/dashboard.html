@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envio de Atividades Complementares</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Envio de Atividades Complementares</h1>
+  
+  <h2>Bem-vindo, {{username}}!</h2> <!-- Aqui o nome do usuário será inserido dinamicamente após a autenticação -->
+
+  <form action="/enviar" method="POST" enctype="multipart/form-data">
+    <label for="nome">Nome do Aluno:</label><br>
+    <input type="text" id="nome" name="nome" required><br><br>
+
+    <label for="ra">RA (Registro Acadêmico):</label><br>
+    <input type="text" id="ra" name="ra" required><br><br>
+
+    <label for="evento">Evento:</label><br>
+    <input type="text" id="evento" name="evento" required><br><br>
+
+    <label for="data">Data do Evento:</label><br>
+    <input type="date" id="data" name="data" required><br><br>
+
+    <label for="horas">Nº de Horas:</label><br>
+    <input type="number" id="horas" name="horas" min="1" required><br><br>
+
+    <label for="arquivo">Comprovante (PDF):</label><br>
+    <input type="file" id="arquivo" name="arquivo" accept="application/pdf" required><br><br>
+
+    <button type="submit">Enviar Atividade</button>
+  </form>
+
+  <br><a href="/logout">Sair</a>
+
+</body>
+</html>
