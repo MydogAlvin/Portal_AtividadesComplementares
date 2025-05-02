@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envio de Atividades</title>
+  <style>
+    /* ===============================
+       Estilos Comuns
+    ================================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"],
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button.enviar {
+      background-color: #4CAF50; /* Verde */
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button.enviar:hover {
+      background-color: #388E3C; /* Verde mais escuro */
+      transform: translateY(-2px); /* Efeito de elevação */
+    }
+
+    button.enviar:active {
+      background-color: #2c6e29; /* Tom mais escuro para quando pressionado */
+      transform: translateY(0); /* Reverte o efeito de elevação */
+    }
+
+    button.enviar:disabled {
+      background-color: #b0b0b0; /* Cor cinza quando desabilitado */
+      cursor: not-allowed; /* Indica que o botão não pode ser clicado */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Enviar Atividade Complementar</h1>
+    <form action="/enviar" method="POST" enctype="multipart/form-data">
+      <label for="nome_aluno">Nome do Aluno:</label>
+      <input type="text" id="nome_aluno" name="nome_aluno" required><br>
+
+      <label for="curso">Curso:</label>
+      <input type="text" id="curso" name="curso" required><br>
+
+      <label for="evento">Evento:</label>
+      <input type="text" id="evento" name="evento" required><br>
+
+      <label for="horas">Horas:</label>
+      <input type="number" id="horas" name="horas" required><br>
+
+      <label for="arquivo">Arquivo (PDF):</label>
+      <input type="file" id="arquivo" name="arquivo" accept=".pdf" required><br>
+
+      <button type="submit" class="enviar">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>
