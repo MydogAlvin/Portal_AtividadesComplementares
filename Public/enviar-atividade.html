@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Enviar Atividade Complementar</title> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===============================
+        Estilos Comuns
+    ================================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .dashboard-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      width: 100%;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .dashboard-box {
+      background-color: rgba(0, 0, 0, 0.7); 
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      padding: 20px 30px;
+      color: white;
+      width: 100%;
+      max-width: 700px;
+      backdrop-filter: blur(4px);
+    }
+
+    h1, h2, p {
+      color: #fff;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 3px;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"],
+    input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px 0; /* Aumentado o espaço inferior */
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button.submit {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    button.submit:hover {
+      background-color: #388E3C;
+      transform: translateY(-2px);
+    }
+
+    /* =================================
+        NOVO: Estilos para botões de navegação
+    ==================================== */
+    .navigation-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 15px;
+    }
+
+    .btn-nav {
+        display: inline-block;
+        padding: 8px 16px;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+        text-align: center;
+    }
+
+    .btn-nav.back {
+        background-color: #6c757d; /* Cinza para "Voltar" */
+    }
+    .btn-nav.back:hover {
+        background-color: #5a6268;
+    }
+
+    .btn-nav.logout {
+        background-color: #f44336; /* Vermelho para "Logout" */
+    }
+    .btn-nav.logout:hover {
+        background-color: #d32f2f;
+    }
+
+  </style>
+</head>
+<body class="dashboard">
+  <div class="dashboard-container">
+    <div class="dashboard-box">
+      <h1>Enviar Nova Atividade Complementar</h1>
+
+      <form action="/enviar" method="POST" enctype="multipart/form-data">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+
+        <label for="ra">Matrícula:</label>
+        <input type="text" name="ra" id="ra" required>
+
+        <label for="evento">Evento:</label>
+        <input type="text" name="evento" id="evento" required>
+
+        <label for="data">Data do Evento:</label>
+        <input type="date" name="data" id="data" required>
+
+        <label for="horas">Horas:</label>
+        <input type="number" name="horas" id="horas" required>
+
+        <label for="arquivo">Comprovante (PDF):</label>
+        <input type="file" name="arquivo" id="arquivo" accept=".pdf">
+
+        <button type="submit" class="submit">Enviar</button>
+      </form>
+      
+      <div class="navigation-buttons">
+          <a href="portal-aluno.html" class="btn-nav back">Voltar ao Portal</a>
+          <a href="/logout" class="btn-nav logout">Logout</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

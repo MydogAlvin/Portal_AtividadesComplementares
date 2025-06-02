@@ -1,8 +1,9 @@
 {
   "name": "portal_atividades",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,6 +12,7 @@
   "description": "",
   "dependencies": {
     "axios": "^1.9.0",
+    "csv-parser": "^3.2.0",
     "csv-writer": "^1.6.0",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",

@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <body class="index">
-    <div class="index-container">
-      <div class="container-box">
-        <h1>Bem-vindo ao Portal de Atividades Complementares</h1>
-        <p>Este é um ambiente simulado para testes.</p>
-        <a href="/login"><button>Login Simulado</button></a>
-      </div>
-    </div>
-  </body>
-  
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Portal de Atividades - Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+<body class="index">
+  <div class="index-container">
+    <div class="container-box">
+      <h1>Bem-vindo ao Portal de Atividades Complementares</h1>
+      <p>Este é um ambiente simulado para testes.</p>
+      <button id="loginSimulado">Login Simulado</button>
+    </div>
+  </div>
 
+  <script>
+    document.getElementById('loginSimulado').addEventListener('click', () => {
+      // Simula login - guarda dados do usuário no localStorage
+      const usuario = { nome: 'Usuário Simulado', id: 1 };
+      localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+      // Redireciona para a página do aluno
+      window.location.href = '/portal-aluno.html';
+    });
+
+    // Se já estiver logado, já redireciona direto para o portal do aluno
+    if (localStorage.getItem('usuarioLogado')) {
+      window.location.href = '/portal-aluno.html';
+    }
+  </script>
+</body>
 </html>

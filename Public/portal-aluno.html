@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Aluno - Minhas Atividades</title>
+    <link rel="stylesheet" href="css/portal-style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Atividades Complementares
+            <button class="close-btn" id="close-btn">&times;</button>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Buscar por evento...">
+            <button>Buscar</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="enviar-atividade.html" class="nav-button">Cadastrar Nova Atividade</a>
+            <a href="#" class="nav-button">Exportar Documentos</a>
+            <a href="/logout" class="nav-button logout">Sair</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <button class="menu-toggle" id="menu-toggle">
+            &#9776; </button>
+
+        <header>
+            <h1>Minhas Atividades Complementares</h1>
+            <p>Acompanhe o status dos seus envios.</p>
+        </header>
+
+        <section class="historico">
+            <h2>Histórico de Envios</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Evento</th>
+                            <th>Data</th>
+                            <th>Horas Solicitadas</th>
+                            <th>Status</th>
+                            <th>Comprovante</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Palestra de IA</td>
+                            <td>20/05/2024</td>
+                            <td>4</td>
+                            <td>Pendente</td>
+                            <td><a href="#">Ver Arquivo</a></td>
+                        </tr>
+                        <tr>
+                            <td>Curso de UX Design</td>
+                            <td>15/04/2024</td>
+                            <td>20</td>
+                            <td>Aprovado</td>
+                            <td><a href="#">Ver Arquivo</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="Public/js/script.js"></script>
+</body>
+</html>
